@@ -1,9 +1,4 @@
 import React from "react";
-import axios from "axios";
-import Register from "./Register";
-
-const baseURL = "http://wytenomore.herokuapp.com/api/aut/";
-
 
 
 class Login extends React.Component {

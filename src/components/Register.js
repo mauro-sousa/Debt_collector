@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import { Alert } from "@mui/material";
-const baseURL = "https://wytnomo.herokuapp.com/api/users";
 
 
 class Register extends React.Component {

@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Checkup from './components/Checkup';
 import Register from './components/Register';
-import Header from './components/Header';
-
 import Login from './components/Login';
 import Mainpage from './components/Mainpage';
-import ConfirmCheck from './components/ConfirmCheck';
 
-var step = 1;
+
 export class Home extends Component {
   
     state = {
@@ -70,18 +66,7 @@ export class Home extends Component {
   statusmssg = e =>{
     this.mssge  = e
   }
-  loginHandler = e => {
-    // e.preventDefault()
-      axios.post('http://localhost:8080/login', {email : this.state.email}, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-        }).then(resp => {
 
-        this.setState( resp.data)
-        
-  })
-}
   render() {
     const {step} = this.state;
     const {firstname,
@@ -117,11 +102,7 @@ export class Home extends Component {
       course,
       role}
     switch (step) {
-        case "main":
-            return (<Mainpage
-            nextStep = {this.nextStep}
-            handleChange = {this.handleChange}
-            values = {values}/>)
+
         case "login":
         return(
             <Login 
@@ -133,15 +114,6 @@ export class Home extends Component {
             handleChange = {this.handleChange}
             values = {values}
             />
-        )
-        case "checkup":
-        return(
-            
-        <Checkup 
-        nextStep = {this.nextStep}
-        handleChange = {this.handleChange}
-        values = {values}
-        />
         )
       case "register":
         return(
@@ -164,23 +136,6 @@ export class Home extends Component {
           mssge = {this.mssge} 
           statusmssg = {this.statusmssg}
           instance = {this.instance}
-          nextStep = {this.nextStep}
-          handleChange = {this.handleChange}
-          values = {values}
-          />
-        )
-
-        case "confirmedcheck":
-        return(
-          <ConfirmCheck  
-          nextStep = {this.nextStep}
-          handleChange = {this.handleChange}
-          values = {values}
-          />
-        )
-        case "confirmeddelivery":
-        return(
-          <ConfirmCheck  
           nextStep = {this.nextStep}
           handleChange = {this.handleChange}
           values = {values}
