@@ -1,32 +1,33 @@
-server/HELP.md
-server/target/
-server/!.mvn/wrapper/maven-wrapper.jar
-server/!**/src/main/**/target/
-server/!**/src/test/**/target/
-server/
-server/### STS ###
-server/.apt_generated
-server/.classpath
-server/.factorypath
-server/.project
-server/.settings
-server/.springBeans
-server/.sts4-cache
-server/
-server/### IntelliJ IDEA ###
-server/.idea
-server/*.iws
-server/*.iml
-server/*.ipr
-server/
-server/### NetBeans ###
-servergit/nbproject/private/
-server/nbbuild/
-server/dist/
-server/nbdist/
-server/.nb-gradle/
-server/build/
-server/!**/src/main/**/build/
-server/!**/src/test/**/build/
-server/### VS Code ###
-server/.vscode/
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
