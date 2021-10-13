@@ -15,17 +15,7 @@ class Mainpage extends React.Component {
         const {values, handleChange} = this.props;
         return (
             <div className="col-sm-4" >
-                <div class="form-group has-search">
-    <span class="fa fa-search form-control-feedback"></span>
-             <input type="text" class="form-control" placeholder="Scan a queue"></input>
-             </div>
                 <div>
-                    
-                <div class="jumbotron text-center">
-                    <h3>{this.props.values.firstname}</h3>
-                    <p>{this.props.values.lastname}</p>
-                    <button className = "btn btn-primary" type="button" onClick= {this.deliver}>Make Delivery Request</button>
-                </div>
 
                 <div class="jumbotron text-center">
                     <h3>Resquest Contract .. </h3>

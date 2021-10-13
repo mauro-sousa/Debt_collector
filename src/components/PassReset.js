@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class Login extends React.Component {
+class PassReset extends React.Component {
     
     submit = e =>{
         var myHeaders = new Headers();
@@ -29,16 +29,9 @@ class Login extends React.Component {
         })
         .catch(error => {
             alert("Invalid Username/Password  ")})
-            this.props.nextStep("student")
+            this.props.nextStep("login")
 
     }
-
-    register = e =>{
-
-        this.props.nextStep("register")
-    }
-
-
 
 
     render() {
@@ -47,25 +40,23 @@ class Login extends React.Component {
             <div className="container-md" >
                 
                 <div class="jumbotron text-center">
-                <h3>Welcome back</h3>
-                    <p>Sign in and enjoy  </p>
+                <h3>Change Password</h3>
                     <p>{this.props.mssge}</p>
                 </div>
                 <div class="jumbotron text-center">
-                <label  className="w3-label">User name</label>
-                <input className = "w3-input" type="email" onChange={handleChange('email')} name='email' ></input>
-
-
                 <label  className="w3-label">Password</label>
-                <input className = "w3-input" type="text" onChange={handleChange('password')} name='password'></input>
+                <input className = "w3-input" type="password" onChange={handleChange('password')} name='password'></input>
+
+
+                <label  className="w3-label">Re-enter Password</label>
+                <input className = "w3-input" type="password" onChange={handleChange('password2')} name='password2'></input>
 
                 <br  />
-                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Login.!!</button>
-                <button className = "btn btn-primary" type="button" onClick= {this.register}> Register</button>
+                <button className = "btn btn-primary" type="button" onClick= {this.submit}>Change</button>
                 </div>
             </div>
         )
     }
 }
 
-export default Login;
+export default PassReset;

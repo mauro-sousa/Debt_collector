@@ -3,13 +3,16 @@ import axios from 'axios';
 import Register from './components/Register';
 import Login from './components/Login';
 import Mainpage from './components/Mainpage';
+import Student from './components/Student';
+import EditStudentProfile from './components/EditStudentProfile';
+import PassReset from './components/PassReset'
 
 
 export class Home extends Component {
   
     state = {
       
-        step : "register",
+        step : "student",
         firstname: "",
         lastname: "",
         username :"",
@@ -115,6 +118,33 @@ export class Home extends Component {
             values = {values}
             />
         )
+
+        case "editStudentProfile":
+          return(
+              <EditStudentProfile 
+              state = {this.getState}
+              mssge = {this.mssge} 
+              statusmssg = {this.statusmssg}
+              instance = {this.instance}
+              nextStep = {this.nextStep}
+              handleChange = {this.handleChange}
+              values = {values}
+              />
+          )
+
+          case "passReset":
+            return(
+                <PassReset 
+                state = {this.getState}
+                mssge = {this.mssge} 
+                statusmssg = {this.statusmssg}
+                instance = {this.instance}
+                nextStep = {this.nextStep}
+                handleChange = {this.handleChange}
+                values = {values}
+                />
+            )
+
       case "register":
         return(
           <Register
@@ -128,6 +158,19 @@ export class Home extends Component {
           values = {values}
           />
         )
+
+        case "student":
+          return(
+            <Student  
+            state = {this.getState}
+            mssge = {this.mssge} 
+            statusmssg = {this.statusmssg}
+            instance = {this.instance}
+            nextStep = {this.nextStep}
+            handleChange = {this.handleChange}
+            values = {values}
+            />
+          )
 
         case "home":
         return(

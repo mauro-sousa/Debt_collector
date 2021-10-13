@@ -3,7 +3,7 @@ import axios from "axios";
 import { Alert } from "@mui/material";
 
 
-class Register extends React.Component {
+class EditStudentProfile extends React.Component {
     
 
     submit = e=>{
@@ -13,7 +13,7 @@ class Register extends React.Component {
         this.props.instance.post("http://localhost:8080/user/register", this.props.state())
         .then(response => response)
         .then((response) => {
-            this.props.nextStep("login")
+            this.props.nextStep("student")
             
             console.log(response.data)
             // this.props.nextStep("register")
@@ -48,7 +48,7 @@ class Register extends React.Component {
         return (
             <div className="container-md" >
                 <div class="jumbotron text-center" bgcolor="red">
-                <h3>STUDENT REGISTRATION FORM</h3>
+                <h3>EDIT PROFILE DETAIILS</h3>
             
                 </div>
                 <div className="jumbotron text-center">
@@ -86,19 +86,7 @@ class Register extends React.Component {
                 
                 <label  className="w3-label">COUNTRY</label>
                 <input className = "w3-input" type="address" onChange={this.props.handleChange('country')} name='country'></input>
-                
-
-
-
-                <label className="w3-label">REGISTER AS</label>
-                <select className = "w3-input" type="text"  onChange={this.props.handleChange('role')} name='role'>
-                    <option>--</option>
-                    <option>student</option>
-                    <option>collector</option>
-                </select>
-                <br />
-
-            
+                            
                 <label  className="w3-label">ID NUMBER</label>
                 <input className = "w3-input" type="number" onChange={this.props.handleChange('id')} name='id'></input>
 
@@ -110,18 +98,11 @@ class Register extends React.Component {
                     <option>male</option>
                 </select>
 
-                <label  className="w3-label">PASSWORD</label>
-                <input className = "w3-input" type="text" onChange={this.props.handleChange('password')} name='password'></input>
-
-                <label  className="w3-label">CONFIRM PASSWORD</label>
-                <input className = "w3-input" type="text" onChange={this.props.handleChange('password2')} name='password2'></input>
-
-                
-                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Register Now.!!</button>
+                <button className = "btn btn-primary" type="button" onClick= {this.submit}>Save Edits</button>
                 </div>
             </div>
         )
     }
 }
 
-export default Register;
+export default EditStudentProfile;
