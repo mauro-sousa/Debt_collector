@@ -1,7 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { Alert } from "@mui/material";
-
+import { Tabs, Tab } from "react-bootstrap";
+import StudentLayout from "./StudentLayout";
+import { InputGroup } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
 
 class Register extends React.Component {
     
@@ -46,28 +49,42 @@ class Register extends React.Component {
     }
     render() {
         return (
-            <div className="container-md" >
-                <div class="jumbotron text-center" bgcolor="red">
-                <h3>STUDENT REGISTRATION FORM</h3>
-            
-                </div>
+            <Tabs  id="controlled-tab-example" className="mb2" activeKey="profile">
+                  <Tab eventKey="profile" title="Edit Profile">
+                        {/* <p>Profile here</p> */}
+                        {/* <StudentLayout  values = {this.props.values} /> */}
+                    
                 <div className="jumbotron text-center">
                 <p>{this.props.mssge}</p>
-                <label  className="w3-label">FIRST NAME</label>
-                <input className = "w3-input" type="text" onChange={this.props.handleChange('firstname')} name='firstname' ></input>
+                <InputGroup className="mb-3">
+  <InputGroup.Text>First and last name</InputGroup.Text>
+  <FormControl aria-label="First name" onChange={this.props.handleChange('firstname') }/>
+  <FormControl aria-label="Last name" onChange={this.props.handleChange('lastname')} />
+</InputGroup>
 
-                <label  className="w3-label">LAST NAME</label>
-                <input className = "w3-input" type="text" onChange={this.props.handleChange('lastname')} name='lastname'></input>
+<InputGroup className="mb-3">
+    <InputGroup.Text type="email" id="inputGroup-sizing-default" onChange={this.props.handleChange('email')}>Email</InputGroup.Text>
+    <FormControl
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </InputGroup>
 
-                <label  className="w3-label">EMAIL</label>
-                <input className = "w3-input" type="email" onChange={this.props.handleChange('email')} name='email'></input>
+  <InputGroup className="mb-3">
+    <InputGroup.Text type="number" id="inputGroup-sizing-default" onChange={this.props.handleChange('id')}>Id Number</InputGroup.Text>
+    <FormControl
+      aria-label="Default"
+      aria-describedby="inputGroup-sizing-default"
+    />
+  </InputGroup>
+  
+
+  
+
 
                 <label  className="w3-label">DATE OF BIRTH</label>
                 <input className = "w3-input" type="date" onChange={this.props.handleChange('dof')} name='dof'></input>
 
-                <label  className="w3-label">ID NUMBER</label>
-                <input className = "w3-input" type="number" onChange={this.props.handleChange('id')} name='id'></input>
-                 
 
                 <label  className="w3-label">COURSE OF STUDY</label>
                 <input className = "w3-input" type="text" onChange={this.props.handleChange('course')} name='course'></input>
@@ -117,9 +134,10 @@ class Register extends React.Component {
                 <input className = "w3-input" type="text" onChange={this.props.handleChange('password2')} name='password2'></input>
 
                 
-                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Register Now.!!</button>
+                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Submit </button>
                 </div>
-            </div>
+                </Tab>
+            </Tabs>
         )
     }
 }

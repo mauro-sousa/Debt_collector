@@ -3,7 +3,7 @@ import axios from 'axios';
 import Register from './components/Register';
 import Login from './components/Login';
 import Mainpage from './components/Mainpage';
-import Student from './components/Student';
+import Student from './components/Student'
 import EditStudentProfile from './components/EditStudentProfile';
 import PassReset from './components/PassReset'
 
@@ -13,21 +13,21 @@ export class Home extends Component {
     state = {
       
         step : "student",
-        firstname: "",
-        lastname: "",
+        firstname: "Xolani",
+        lastname: "Dlangisa",
         username :"",
-        dob: "",
-        email: "",
-        student_no:"",
+        dob: "2020-12-11",
+        email: "dlangisax@gmail.com",
+        student_no:"Zrt123",
         id: "",
-        cell: "",
-        gender: "",
-        address: "",
-        city:"",
+        cell: "0787544647",
+        gender: "male",
+        address: "70 sophia st, ",
+        city:"Durban",
         region:"",
-        country:"",
-        course:"",
-        role:"",
+        country:"South Africa",
+        course:"Accounting",
+        role:"Student",
         password:"",
         password2:""
     }
@@ -160,7 +160,7 @@ export class Home extends Component {
         )
 
         case "student":
-          return(
+          return( 
             <Student  
             state = {this.getState}
             mssge = {this.mssge} 

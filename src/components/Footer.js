@@ -1,27 +1,19 @@
 import React from "react";
-import axios from "axios";
-const baseURL = "http://localhost:5000/api/users";
+
 
 
 class Footer extends React.Component {
-    
 
-    render() {  
+
+
+    render() {
+        const {values, handleChange} = this.props;
         return (
-            <div >
-                <div>
-                    
- 
-
-                <div class="jumbotron text-center">
-                    <h3>Some Footer Here .. </h3>
-                    <p> ...</p> 
-                    
-                </div>
-
-
-                </div>
-            </div>
+            <div class="d-flex flex-column">
+            <footer class="footer">
+                
+            </footer>
+          </div>
         )
     }
 }
