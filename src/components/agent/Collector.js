@@ -14,9 +14,10 @@ import { Form } from "react-bootstrap";
 import StudentLayout from "./StudentLayout";
 import StudentDeptReview from "./StudentDeptReview";
 import Payment from "./Payment";
+
 // import { ProgressBar } from "react-bootstrap";
 // import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-class Stu extends Component {
+class Collector extends Component {
     // const [key, setKey] = useState('home');
     
     
@@ -39,15 +40,21 @@ class Stu extends Component {
         
     <Tab eventKey="profile" title="Profile">
         {/* <p>Profile here</p> */}
-        <StudentLayout  values = {this.props.values} />
+        <CollectorLayout  values = {this.props.values} />
+    </Tab>
+
+            
+    <Tab eventKey="contracts" title="Contracts">
+        {/* <p>Profile here</p> */}
+        <Contracts  values = {this.props.values} />
     </Tab>
 
     
-    <Tab eventKey="review" title="Dept Review">
+    <Tab eventKey="review" title="Students Depts Overview">
         <StudentDeptReview values = {this.props.values} />
         
     </Tab>
-        <Tab eventKey="payments" title="Payments">
+        <Tab eventKey="payments" title="Make Report">
 
          <Payment values = {this.props.values} />
         </Tab>
@@ -55,4 +62,4 @@ class Stu extends Component {
     }
 
 }
-export default   Stu;
+export default   Collector;

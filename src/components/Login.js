@@ -1,6 +1,7 @@
 import React from "react";
-
-
+import { InputGroup } from "react-bootstrap";
+import { FormControl } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 class Login extends React.Component {
     
     submit = e =>{
@@ -33,37 +34,64 @@ class Login extends React.Component {
 
     }
 
-    register = e =>{
+    next (){
+        if (localStorage.getItem("logged")!=null){
+            this.props.nextStep("student")
+        }
+        // this.props.nextStep("login")
+        
+    }
 
-        this.props.nextStep("register")
+    nextpage = e =>{
+        localStorage.setItem("logged", "loger")
+        // this.props.nextStep("student")
+        if (localStorage.getItem("logged")!=null){
+            console.log(localStorage.getItem("state"))
+            this.props.nextStep("student")
+        }
     }
 
 
-
+    emailValidation(){
+        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+        if(!this.state.email || regex.test(this.state.email) === false){
+            this.setState({
+                error: "Email is not valid"
+            });
+            return false;
+        }
+        return true;
+    }
 
     render() {
         const {values, handleChange} = this.props;
         return (
-            <div className="container-md" >
+       
                 
-                <div class="jumbotron text-center">
-                <h3>Welcome back</h3>
-                    <p>Sign in and enjoy  </p>
-                    <p>{this.props.mssge}</p>
+ 
+                <div className="container px-5">
+                    {this.next()}
+                <InputGroup className="row gx-5">
+                    <div className="col">
+                        <InputGroup.Text type="email" id="inputGroup-sizing-default" onChange={this.props.handleChange('email')}>Email</InputGroup.Text>
+                            <FormControl
+                            aria-label="Default"
+                            aria-describedby="inputGroup-sizing-default"
+                            />
+                        <InputGroup.Text type="email" id="inputGroup-sizing-default" onChange={this.props.handleChange('password')}>Password</InputGroup.Text>
+                        <FormControl
+                        aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default"
+                        />
+                    <Button variant="outline-info" onClick={this.nextpage}>Login</Button>{' '}
+                    <Button variant="outline-success"   onClick={this.nextpage}>Register</Button>{' '}
+                    </div>
+                </InputGroup>
+                <InputGroup className="container px-4">
+                 
+                </InputGroup>
                 </div>
-                <div class="jumbotron text-center">
-                <label  className="w3-label">User name</label>
-                <input className = "w3-input" type="email" onChange={handleChange('email')} name='email' ></input>
-
-
-                <label  className="w3-label">Password</label>
-                <input className = "w3-input" type="text" onChange={handleChange('password')} name='password'></input>
-
-                <br  />
-                <button className = "btn btn-primary" type="button" onClick= {this.submit}> Login.!!</button>
-                <button className = "btn btn-primary" type="button" onClick= {this.register}> Register</button>
-                </div>
-            </div>
+         
         )
     }
 }

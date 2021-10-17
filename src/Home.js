@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-import Register from './components/Register';
+import Register from './components/student/Register';
 import Login from './components/Login';
 import Mainpage from './components/Mainpage';
-import Student from './components/Student'
-import EditStudentProfile from './components/EditStudentProfile';
+import Student from './components/student/Student'
+import EditStudentProfile from './components/student/EditStudentProfile';
 import PassReset from './components/PassReset'
-
+import PrimarySearchAppBar from './components/PrimarySearchAppBar';
 
 export class Home extends Component {
   
     state = {
       
-        step : "student",
+        step : "login",
         firstname: "Xolani",
         lastname: "Dlangisa",
         username :"",
@@ -103,11 +103,21 @@ export class Home extends Component {
       region,
       country,
       course,
-      role}
+      role,}
+
+    const methods = {state :this.getState,
+      mssge : this.mssge, 
+      statusmssg : this.statusmssg,
+      instance : this.instance,
+      nextStep : this.nextStep,
+      handleChange : this.handleChange,
+      values : values
+    }
     switch (step) {
 
         case "login":
         return(
+          <PrimarySearchAppBar />,
             <Login 
             state = {this.getState}
             mssge = {this.mssge} 
@@ -121,6 +131,7 @@ export class Home extends Component {
 
         case "editStudentProfile":
           return(
+            <PrimarySearchAppBar />,
               <EditStudentProfile 
               state = {this.getState}
               mssge = {this.mssge} 
@@ -134,6 +145,7 @@ export class Home extends Component {
 
           case "passReset":
             return(
+              <PrimarySearchAppBar />,
                 <PassReset 
                 state = {this.getState}
                 mssge = {this.mssge} 
@@ -147,6 +159,7 @@ export class Home extends Component {
 
       case "register":
         return(
+          <PrimarySearchAppBar />,
           <Register
 
           state = {this.getState}
@@ -161,6 +174,9 @@ export class Home extends Component {
 
         case "student":
           return( 
+            <div>
+              
+            <PrimarySearchAppBar nextStep = {this.nextStep} />
             <Student  
             state = {this.getState}
             mssge = {this.mssge} 
@@ -170,10 +186,12 @@ export class Home extends Component {
             handleChange = {this.handleChange}
             values = {values}
             />
+            </div>
           )
 
         case "home":
         return(
+          <PrimarySearchAppBar />,
           <Mainpage
           state = {this.state}
           mssge = {this.mssge} 

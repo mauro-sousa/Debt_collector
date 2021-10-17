@@ -3,7 +3,7 @@ import { Tab, Card, ListGroup } from "react-bootstrap";
 import { ListGroupItem } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { ProgressBar } from "react-bootstrap";
-import PaymentForm from "./CardPayments";
+import PaymentForm from "./student/CardPayments";
 class Payment extends React.Component {
 
 

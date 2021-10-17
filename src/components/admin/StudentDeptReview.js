@@ -11,11 +11,11 @@ class StudentDeptReview extends React.Component {
     render() {
         const {values, handleChange} = this.props;
         return (
-           <div className="row" style={{  padding:"1em", float:"center" ,width:"100%"}}>
+           <div className="row" style={{ width:"100%",padding:"1em", float:"center" }}>
 
     
-    <Card style={{ width:"23rem" }}>
-      <Card.Img variant="top" src="depts.jpg" style={{width:"100% ",height:"18em "} }/>
+    <Card >
+      <Card.Img variant="top" src="depts.jpg" style={{height:"18em "} }/>
       <Card.Body>
         <Card.Title><h5>Depts Overview ..</h5></Card.Title>
         
@@ -33,20 +33,11 @@ class StudentDeptReview extends React.Component {
             Payed: $ 55.00
                 <ProgressBar  animated now={55}   label="55%"/></ListGroupItem>
             </ListGroup.Item>
-
-
-            
-
             <ListGroup.Item>
             <ListGroupItem variant="success">
                 Months left 
                 <ProgressBar animated now={20} variant="danger"   label="20%"/></ListGroupItem>
             </ListGroup.Item>
-
-
-
-
-
             <ListGroup.Item>
             <ListGroupItem variant="info">
                 Interest Rate
@@ -59,13 +50,64 @@ class StudentDeptReview extends React.Component {
         
         </Card.Body>
     </Card>
+    <Card>
+    <ListGroup.Item>Amount</ListGroup.Item>
+  <ListGroup.Item variant="primary">$</ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    $
+  </ListGroup.Item>
+  <ListGroup.Item action variant="primary">
+    $
+  </ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    $
+  </ListGroup.Item>
+      </Card>
 
 
+    
+
+    <Card>
+
+<ListGroup>
+  {/* <ListGroup.Item>Owed Modules</ListGroup.Item> */}
+
+    
 
 
-<ListGroup  style={{ width:"30rem", height:"10em"}}>
-  <ListGroup.Item>Owed Modules</ListGroup.Item>
-  <ListGroup.Item variant="primary">Primary</ListGroup.Item>
+  <div className="row">
+    <div class="col-6">
+      <ListGroup.Item>Amount</ListGroup.Item>
+  <ListGroup.Item variant="primary">$</ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    $
+  </ListGroup.Item>
+  <ListGroup.Item action variant="primary">
+    $
+  </ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    $
+  </ListGroup.Item>
+    </div>
+    <div class="col-6">
+    <ListGroup.Item>Date of payment</ListGroup.Item>
+
+      <ListGroup.Item variant="primary">-</ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    - 
+  </ListGroup.Item>
+  <ListGroup.Item action variant="primary">
+    -
+  </ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    -
+  </ListGroup.Item>
+  
+    </div>
+    <div class="col-6">
+      <ListGroup.Item>Statu</ListGroup.Item>
+
+      <ListGroup.Item variant="primary">Primary</ListGroup.Item>
   <ListGroup.Item action variant="secondary">
     Secondary
   </ListGroup.Item>
@@ -75,23 +117,29 @@ class StudentDeptReview extends React.Component {
   <ListGroup.Item action variant="danger">
     Danger
   </ListGroup.Item>
-  {/* <ListGroup.Item action variant="warning">
-    Warning
-  </ListGroup.Item>
-  <ListGroup.Item action variant="info">
-    Info
-  </ListGroup.Item>
-  <ListGroup.Item action variant="light">
-    Light
-  </ListGroup.Item>
+    </div>
+    <div class="col-6">
 
-  <ListGroup.Item action variant="dark">
-    Dark
-  </ListGroup.Item> */}
-</ListGroup>
+      <ListGroup.Item>Owed Modules</ListGroup.Item>
+
+      <ListGroup.Item variant="primary">Primary</ListGroup.Item>
+  <ListGroup.Item action variant="secondary">
+    Secondary
+  </ListGroup.Item>
+  <ListGroup.Item action variant="success">
+    Success
+  </ListGroup.Item>
+  <ListGroup.Item action variant="danger">
+    Danger
+  </ListGroup.Item>
+    </div>
+  </div>
+
+  </ListGroup>
+  </Card>
     </div>
 
-        )
+    )
     }
 }
 
